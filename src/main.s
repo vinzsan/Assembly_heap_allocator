@@ -186,6 +186,9 @@ _allocate:
     lea rax,[r12 + STRUCT_SIZE]
     
     jmp _allocate.end
+    
+    int3
+    hlt
 
 _allocate.new_block_created:
 
@@ -220,6 +223,8 @@ _allocate.l01:
     
     lea rax,[r13 + STRUCT_SIZE]
     jmp _allocate.end
+    
+    int3
 
 _allocate.e01:
 
@@ -235,6 +240,8 @@ _allocate.null:
 
     xor rax,rax
     jmp _allocate.end
+    
+    ud2
 
 _allocate.end:
 
@@ -244,6 +251,8 @@ _allocate.end:
 
     leave
     ret
+
+    hlt
     
 _free:
 
@@ -273,6 +282,7 @@ _free.twice:
     call print
 
     ud2
+    hlt
 
 _free.done:
 
