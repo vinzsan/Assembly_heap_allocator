@@ -1,8 +1,8 @@
 ASM = as
 LD  = ld
 
-SRC = src/main.s
-OBJ = main.o
+SRC = src/*.s
+OBJ = *.o
 BIN = test
 
 all: $(BIN)
