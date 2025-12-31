@@ -143,7 +143,7 @@ _src_free_block.next_block:
 
     mov rax,r13
     
-    mov r13,[rax + 16]
+    mov r13,[rax + 2 * 8]
     
     jmp _src_free_block.iter
     
@@ -209,7 +209,7 @@ _allocate.new_block_created:
     mov QWORD ptr [rax + 8],rdi
     
     mov rax,r13
-    mov QWORD ptr [rax + 16],rdx
+    mov QWORD ptr [rax + 2 * 8],rdx
     
 _allocate.l01:
 

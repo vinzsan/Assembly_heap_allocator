@@ -1,7 +1,8 @@
 .code64
 .intel_syntax noprefix
 
-.extern mutex_guard_lock
+.extern mut_lock
+.extern mut_unlock
 .extern virtual_map
 .extern free_map
 .extern _allocate
@@ -13,3 +14,4 @@
 .extern _strncpy
 .extern atomic_load
 .extern atomic_store
+.extern _itoa
